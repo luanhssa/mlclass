@@ -14,7 +14,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import requests
 
 print('\n - Lendo o arquivo com o dataset sobre diabetes')
-data = pd.read_csv('diabetes_dataset.csv')
+data = pd.read_csv('diabetes_dataset_edit.csv')
 
 # Criando X and y par ao algorítmo de aprendizagem de máquina.\
 print(' - Criando X e y para o algoritmo de aprendizagem a partir do arquivo diabetes_dataset')
@@ -26,7 +26,7 @@ y = data.Outcome
 
 # Ciando o modelo preditivo para a base trabalhada
 print(' - Criando modelo preditivo')
-neigh = KNeighborsClassifier(n_neighbors=3)
+neigh = KNeighborsClassifier(n_neighbors=13)
 neigh.fit(X, y)
 
 #realizando previsões com o arquivo de
@@ -38,7 +38,7 @@ y_pred = neigh.predict(data_app)
 URL = "http://aydanomachado.com/mlclass/01_Preprocessing.php"
 
 #TODO Substituir pela sua chave aqui
-DEV_KEY = "COLOCAR_SUA_KEY_AQUI"
+DEV_KEY = "416c6d65696461"
 
 # json para ser enviado para o servidor
 data = {'dev_key':DEV_KEY,
